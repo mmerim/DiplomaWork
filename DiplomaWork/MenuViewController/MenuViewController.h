@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  MenuViewController.h
 //  DiplomaWork
 //
-//  Created by Meri on 12/2/16.
+//  Created by Meri on 12/3/16.
 //  Copyright © 2016 Meri. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MenuViewController : UIViewController
 
 @end
-
