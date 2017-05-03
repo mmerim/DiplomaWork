@@ -1,15 +1,16 @@
 //
-//  Lagranji BanadzevViewController.m
+//  NewtoniBanadzevViewController.m
 //  DiplomaWork
 //
-//  Created by Meri on 12/3/16.
+//  Created by Meri on 12/6/16.
 //  Copyright © 2016 Meri. All rights reserved.
 //
 
-#import "Lagranji BanadzevViewController.h"
+#import "NewtoniBanadzevViewController.h"
 #import "CustomTableViewCell.h"
 
-@interface Lagranji_BanadzevViewController () <UIPickerViewDataSource,UIPickerViewDelegate, UITextViewDelegate, UITableViewDataSource>
+
+@interface NewtoniBanadzevViewController () <UIPickerViewDataSource,UIPickerViewDelegate, UITextViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
@@ -24,21 +25,21 @@
 
 @end
 
-@implementation Lagranji_BanadzevViewController
+@implementation NewtoniBanadzevViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.backgroundColor = [UIColor clearColor];
-    
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Math-1.png"]];
-    
-    self.navigationItem.title = @"Լագրանժի ինտերպոլացիոն բանաձեւ";
-    
+    self.navigationItem.title = @"Նյուտոնի ինտերպոլացիոն բանաձեւ";
     [self.hashvelButton setTitle:@"Հաշվել" forState:
      UIControlStateNormal];
+    
     self.numberOfN = 1;
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     [self hideKeyboardWhenTouchingBackground];
+    //    [self.hashvelButton setEnabled:NO];
+    
     self.dic = [[NSMutableDictionary alloc]init];
 }
 
@@ -57,6 +58,7 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -64,7 +66,7 @@
     if ([textField.text rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound) {
         [self.valueForCount setText: @""];
     }
-return YES;
+    return YES;
 }
 
 
@@ -91,15 +93,6 @@ return YES;
     self.numberOfN = row+1;
     [self.tableView reloadData];
 }
-
-//- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    NSString *title = @"sample title";
-//    NSAttributedString *attString =
-//    [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
-//    
-//    return attString;
-//}
 
 #pragma mark - TableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -168,40 +161,72 @@ return YES;
 -(void)saveValue:(NSString *) labelTextX keyX:(NSString *)key saveValue:(NSString *) labelTextY keyY:(NSString *)key1{
     [self.dic setValue: labelTextX forKey: key];
     [self.dic setValue: labelTextY forKey: key1];
+    
+    //    NSLog(@"%@",self.dic);
 }
 
-#pragma mark -Counting Lagrange
--(NSInteger)countLagrange{
+#pragma mark -Counting Newton
+
+/*
+float NewtonFunc(int n, float *x, float* y, float a) {
+    float sum = 0;
+    for(int j = 0; j < n-1; ++j) {
+        for(int i = n-1; i > j; --i) {
+            y[i] = (y[i] - y[i-1]) / (x[i] - x[i-j-1]);
+        }
+    }
+    for(int i = n-1; i >= 0; --i) {
+        float mult = 1;
+        for(int j = 0; j < i; ++j)
+            mult*=(a-x[j]);
+        
+        mult *= y[i];
+        sum += mult;
+    }
+    return sum;
+}
+*/
+-(NSInteger)countNewton{
     NSInteger sum = 0;
-    for (int i = 0; i < self.numberOfN; ++i) {
+    
+    for (int j = 0; j < self.numberOfN; ++j) {
+        for (int i = (int)self.numberOfN-1; i > j; --i) {
+//            y[i] = (y[i] - y[i-1]) / (x[i] - x[i-j-1]);
+            NSString *yIKey = [NSString stringWithFormat: @"Y%ld",(long)i];
+            NSInteger yI = [[self.dic valueForKey: yIKey] integerValue];
+            NSString *yIKey1 = [NSString stringWithFormat: @"Y%ld",(long)i-1];
+            NSInteger yI1 = [[self.dic valueForKey: yIKey1] integerValue];
+    NSLog(@"yi=%ld   yi-1=%ld  ",(long)yI, (long)yI1);
+            NSString *xIKey = [NSString stringWithFormat: @"X%ld",(long)i];
+            NSInteger xI = [[self.dic valueForKey: xIKey] integerValue];
+            NSString *xIKey1 = [NSString stringWithFormat: @"X%ld",(long)i-j-1];
+            NSInteger xI1 = [[self.dic valueForKey: xIKey1] integerValue];
+    NSLog(@"xi=%ld   xi-1=%ld  ",(long)xI, (long)xI1);
+
+            yI = (yI - yI1) / (xI - xI1);
+        NSLog(@"yi=%ld   yi-1=%ld  ",(long)yI, (long)yI1);
+
+        }
+    }
+    for(int i = (int)self.numberOfN; i >= 0; --i) {
         NSInteger mult = 1;
-       for (int j = 0; j < self.numberOfN; ++j) {
+        for(int j = 0; j < i; ++j){
+            NSString *xJKey = [NSString stringWithFormat: @"X%ld",(long)j];
+            NSInteger xJ = [[self.dic valueForKey: xJKey] integerValue];
+            mult*=(self.valueForCount.text.integerValue - xJ);
         
-           NSString *xIKey = [NSString stringWithFormat: @"X%ld",(long)i];
-           NSInteger xI = [[self.dic valueForKey: xIKey] integerValue];
-           NSString *xJKey = [NSString stringWithFormat: @"X%ld",(long)j];
-           NSInteger xJ = [[self.dic valueForKey: xJKey] integerValue];
-//           NSLog(@"i=%d j=%d ---- xj=%ld mult = %ld", i, j, (long)xJ, (long)mult);
-           
-           if (j != i) {
-               mult *= (self.valueForCount.text.integerValue - xJ) / (xI - xJ);
-               NSLog(@"%ld", (long)mult);
-           }
-           
-       }
-        
-        NSString *yIKey = [NSString stringWithFormat: @"Y%ld",(long)i];
-        NSInteger yI = [[self.dic valueForKey: yIKey] integerValue];
-//        NSLog(@"y=%ld", (long)yI);
-        sum += (mult * yI);
-        NSLog(@"%ld", (long)sum);
+            NSString *yIKey = [NSString stringWithFormat: @"Y%ld",(long)i];
+            NSInteger yI = [[self.dic valueForKey: yIKey] integerValue];
+            mult *= yI;
+            sum += mult;
+        }
     }
     return sum;
 }
 
 #pragma mark - UIAlertView
 -(IBAction)Alert{
-    NSInteger m = [self countLagrange];
+    NSInteger m = [self countNewton];
     NSLog(@"%ld", (long)m);
     NSString *inStr = [NSString stringWithFormat: @"%ld", (long)m];
     
@@ -214,7 +239,16 @@ return YES;
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action) {
                                 }];
+    //
+    //    UIAlertAction* noButton = [UIAlertAction
+    //                               actionWithTitle:@"No, thanks"
+    //                               style:UIAlertActionStyleDefault
+    //                               handler:^(UIAlertAction * action) {
+    //                                   //Handle no, thanks button
+    //                               }];
+    
     [alert addAction:yesButton];
+    //    [alert addAction:noButton];
     
     [self presentViewController:alert animated:YES completion:nil];
 }

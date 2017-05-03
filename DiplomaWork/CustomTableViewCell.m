@@ -16,6 +16,9 @@
 
 @property(strong, nonatomic)NSString *key;
 @property(strong, nonatomic)NSString *key1;
+
+
+
 @end
 
 @implementation CustomTableViewCell
@@ -33,13 +36,16 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
+    
+    //bolor@ tver chen
     if ([textField.text rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound) {
         [self.valueTextField setText: @""];
         [self.valueTextFieldY setText: @""];
         return YES;
     }
-    [self.stacox saveValue:self.valueTextField.text keyX:self.key saveValue:self.valueTextFieldY.text   keyY:self.key1];
     
+    
+    [self.stacox saveValue:self.valueTextField.text keyX:self.key saveValue:self.valueTextFieldY.text   keyY:self.key1];
     return YES;
 }
 

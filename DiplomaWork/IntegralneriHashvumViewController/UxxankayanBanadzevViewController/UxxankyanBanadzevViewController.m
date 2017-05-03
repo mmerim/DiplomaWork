@@ -1,44 +1,43 @@
 //
-//  Lagranji BanadzevViewController.m
+//  UxxankyanBanadzevViewController.m
 //  DiplomaWork
 //
-//  Created by Meri on 12/3/16.
+//  Created by Meri on 12/7/16.
 //  Copyright © 2016 Meri. All rights reserved.
 //
 
-#import "Lagranji BanadzevViewController.h"
-#import "CustomTableViewCell.h"
+#import "UxxankyanBanadzevViewController.h"
+#import "CustomIntegralTableViewCell.h"
 
-@interface Lagranji_BanadzevViewController () <UIPickerViewDataSource,UIPickerViewDelegate, UITextViewDelegate, UITableViewDataSource>
+@interface UxxankyanBanadzevViewController () <UIPickerViewDataSource,UIPickerViewDelegate, UITextViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITextField *aValue;
+@property (weak, nonatomic) IBOutlet UITextField *bValue;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
-@property (weak, nonatomic) IBOutlet UITextField *valueForCount; //x
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *hashvelButton;
+
 
 @property(weak, nonatomic) NSMutableArray *arrayOfXLebles;
 @property (assign, nonatomic) NSInteger numberOfN;
 @property(strong, nonatomic) NSMutableDictionary *dic;
-@property(strong, nonatomic) NSString *xValue;
 @property(strong, nonatomic) NSString *yValue;
 
 @end
 
-@implementation Lagranji_BanadzevViewController
+@implementation UxxankyanBanadzevViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Ուղղանյան բանաձեւ";
+    [self.hashvelButton setTitle:@"Հաշվել" forState:UIControlStateNormal];
+    
+    self.numberOfN = 1;
     self.tableView.backgroundColor = [UIColor clearColor];
     
-//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Math-1.png"]];
-    
-    self.navigationItem.title = @"Լագրանժի ինտերպոլացիոն բանաձեւ";
-    
-    [self.hashvelButton setTitle:@"Հաշվել" forState:
-     UIControlStateNormal];
-    self.numberOfN = 1;
-    
     [self hideKeyboardWhenTouchingBackground];
+    
     self.dic = [[NSMutableDictionary alloc]init];
 }
 
@@ -52,38 +51,34 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self removeKeyboardObservsers];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     if ([textField.text rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound) {
-        [self.valueForCount setText: @""];
+        [self.aValue setText:@""];
+        [self.bValue setText:@""];
     }
-return YES;
-}
-
-
-// The number of columns of data
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    return 1;
-}
-
-// The number of rows of data
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
-    return 900;
+    return YES;
 }
 
 
 #pragma mark - PickerView
-- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
+// The number of columns of data
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+// The number of rows of data
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 900;
+}
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return  [NSString stringWithFormat:@"%ld",(long)row+1];
 }
 
@@ -92,37 +87,26 @@ return YES;
     [self.tableView reloadData];
 }
 
-//- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    NSString *title = @"sample title";
-//    NSAttributedString *attString =
-//    [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor redColor]}];
-//    
-//    return attString;
-//}
-
 #pragma mark - TableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.numberOfN;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    CustomIntegralTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     [cell setStacox: self];
-    self.xValue = [self.dic valueForKey: [NSString stringWithFormat: @"X%ld",(long)indexPath.row]];
     self.yValue = [self.dic valueForKey: [NSString stringWithFormat: @"Y%ld",(long)indexPath.row]];
-    [cell updateCell:indexPath.row xValue: self.xValue yValue: self.yValue];
+    NSLog(@"-->%@", self.yValue);
+    [cell updateCell:indexPath.row yValue: self.yValue];
     return cell;
 }
 
 #pragma mark - Hide keyboard when touching in the background
-- (void)handleSingleTap:(UITapGestureRecognizer *) sender
-{
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender {
     [self.view endEditing:YES];
 }
 
--(void)hideKeyboardWhenTouchingBackground
-{
+-(void)hideKeyboardWhenTouchingBackground {
     UIGestureRecognizer *tapper;
     tapper = [[UITapGestureRecognizer alloc]
               initWithTarget:self action:@selector(handleSingleTap:)];
@@ -142,8 +126,7 @@ return YES;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
--(void)keyboardShown:(NSNotification*) notification
-{
+-(void)keyboardShown:(NSNotification*) notification {
     NSDictionary* info = [notification userInfo];
     double animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
@@ -165,43 +148,26 @@ return YES;
                          self.tableView.scrollIndicatorInsets =UIEdgeInsetsZero;
                      }];
 }
--(void)saveValue:(NSString *) labelTextX keyX:(NSString *)key saveValue:(NSString *) labelTextY keyY:(NSString *)key1{
-    [self.dic setValue: labelTextX forKey: key];
-    [self.dic setValue: labelTextY forKey: key1];
+-(void)saveValue:(NSString *) labelTextY keyY:(NSString *)key {
+    [self.dic setValue: labelTextY forKey: key];
+    //    NSLog(@"%@",self.dic);
 }
 
-#pragma mark -Counting Lagrange
--(NSInteger)countLagrange{
+#pragma mark -Counting Uxxankyun
+-(NSInteger)countUxxankyun{
+    NSInteger h = (self.bValue.text.integerValue - self.aValue.text.integerValue) / self.numberOfN;
     NSInteger sum = 0;
     for (int i = 0; i < self.numberOfN; ++i) {
-        NSInteger mult = 1;
-       for (int j = 0; j < self.numberOfN; ++j) {
-        
-           NSString *xIKey = [NSString stringWithFormat: @"X%ld",(long)i];
-           NSInteger xI = [[self.dic valueForKey: xIKey] integerValue];
-           NSString *xJKey = [NSString stringWithFormat: @"X%ld",(long)j];
-           NSInteger xJ = [[self.dic valueForKey: xJKey] integerValue];
-//           NSLog(@"i=%d j=%d ---- xj=%ld mult = %ld", i, j, (long)xJ, (long)mult);
-           
-           if (j != i) {
-               mult *= (self.valueForCount.text.integerValue - xJ) / (xI - xJ);
-               NSLog(@"%ld", (long)mult);
-           }
-           
-       }
-        
         NSString *yIKey = [NSString stringWithFormat: @"Y%ld",(long)i];
         NSInteger yI = [[self.dic valueForKey: yIKey] integerValue];
-//        NSLog(@"y=%ld", (long)yI);
-        sum += (mult * yI);
-        NSLog(@"%ld", (long)sum);
+        sum += yI;
     }
-    return sum;
+    return sum * h;
 }
 
 #pragma mark - UIAlertView
 -(IBAction)Alert{
-    NSInteger m = [self countLagrange];
+    NSInteger m = [self countUxxankyun];
     NSLog(@"%ld", (long)m);
     NSString *inStr = [NSString stringWithFormat: @"%ld", (long)m];
     
@@ -214,8 +180,18 @@ return YES;
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action) {
                                 }];
+    //
+    //    UIAlertAction* noButton = [UIAlertAction
+    //                               actionWithTitle:@"No, thanks"
+    //                               style:UIAlertActionStyleDefault
+    //                               handler:^(UIAlertAction * action) {
+    //                                   //Handle no, thanks button
+    //                               }];
+    
     [alert addAction:yesButton];
+    //    [alert addAction:noButton];
     
     [self presentViewController:alert animated:YES completion:nil];
 }
+
 @end

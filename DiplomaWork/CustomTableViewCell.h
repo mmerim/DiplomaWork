@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Lagranji BanadzevViewController.h"
+#import "NewtoniBanadzevViewController.h"
 
 @interface CustomTableViewCell : UITableViewCell
 
--(void)updateCell:(NSInteger) row xValue:(NSString *)xvalue yValue:(NSString *)yValue;
-
-
 @property(nonatomic,strong) id<TestProtocol> stacox;
+-(void)updateCell:(NSInteger) row xValue:(NSString *)xvalue yValue:(NSString *)yValue;
 
 
 @end

@@ -8,19 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		CC0C34A11DF55EE2008B8BD0 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0C34A01DF55EE2008B8BD0 /* CustomTableViewCell.m */; };
+		CC155BF91DF6CB0600762606 /* NewtoniBanadzevViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC155BF81DF6CB0600762606 /* NewtoniBanadzevViewController.m */; };
+		CC155C031DF7FC9100762606 /* UxxankyanBanadzevViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC155C021DF7FC9100762606 /* UxxankyanBanadzevViewController.m */; };
+		CC155C071DF7FCC400762606 /* SexaniBanadzevViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC155C061DF7FCC400762606 /* SexaniBanadzevViewController.m */; };
+		CC155C0B1DF7FCEA00762606 /* SimpsoniBanadzevViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC155C0A1DF7FCEA00762606 /* SimpsoniBanadzevViewController.m */; };
+		CC155C0F1DF7FD1C00762606 /* AniskakanIntegraliHashvumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC155C0E1DF7FD1C00762606 /* AniskakanIntegraliHashvumViewController.m */; };
+		CC155C211DF814CA00762606 /* CustomIntegralTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC155C201DF814CA00762606 /* CustomIntegralTableViewCell.m */; };
+		CC155C251DF825FF00762606 /* ErkuPopFuncUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC155C241DF825FF00762606 /* ErkuPopFuncUIViewController.m */; };
+		CC159D011EB8693000B63BD9 /* EyleriDzevapoxvacMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC159D001EB8693000B63BD9 /* EyleriDzevapoxvacMethodViewController.m */; };
+		CC159D051EB869E200B63BD9 /* RungKuttiMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC159D041EB869E200B63BD9 /* RungKuttiMethodViewController.m */; };
+		CC1B891D1E9EB8FF00E8F6BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1B891C1E9EB8FF00E8F6BF /* Assets.xcassets */; };
+		CC1B891F1E9EB91D00E8F6BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1B891E1E9EB91D00E8F6BF /* LaunchScreen.storyboard */; };
 		CC1C92FC1DF1AC8000E78020 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C92FB1DF1AC8000E78020 /* main.m */; };
 		CC1C92FF1DF1AC8000E78020 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C92FE1DF1AC8000E78020 /* AppDelegate.m */; };
-		CC1C93051DF1AC8000E78020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1C93031DF1AC8000E78020 /* Main.storyboard */; };
 		CC1C93081DF1AC8000E78020 /* DiplomaWork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC1C93061DF1AC8000E78020 /* DiplomaWork.xcdatamodeld */; };
-		CC1C930A1DF1AC8000E78020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1C93091DF1AC8000E78020 /* Assets.xcassets */; };
-		CC1C930D1DF1AC8000E78020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1C930B1DF1AC8000E78020 /* LaunchScreen.storyboard */; };
 		CC1C93181DF1AC8000E78020 /* DiplomaWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C93171DF1AC8000E78020 /* DiplomaWorkTests.m */; };
 		CC1C93231DF1AC8000E78020 /* DiplomaWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C93221DF1AC8000E78020 /* DiplomaWorkUITests.m */; };
 		CC1C93351DF2D07D00E78020 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C93341DF2D07D00E78020 /* MenuViewController.m */; };
 		CC1C933A1DF2D0FA00E78020 /* FunkcianeriMotarkumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C93391DF2D0FA00E78020 /* FunkcianeriMotarkumViewController.m */; };
 		CC1C93471DF2D1AE00E78020 /* DiferencialHavasarumnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1C93461DF2D1AE00E78020 /* DiferencialHavasarumnerViewController.m */; };
+		CC27E5A81EAFB77B0004701F /* CustomCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC27E5A71EAFB77B0004701F /* CustomCollectionViewController.m */; };
+		CC37120D1EA38265000AE4EF /* EylerMethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC37120C1EA38265000AE4EF /* EylerMethodViewController.m */; };
+		CC3712181EA39F0E000AE4EF /* CustomDiferencialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3712171EA39F0E000AE4EF /* CustomDiferencialTableViewCell.m */; };
 		CC3CAFBA1DF30BE500705587 /* IntegralneriHashvumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3CAFB91DF30BE500705587 /* IntegralneriHashvumViewController.m */; };
 		CC3CAFBE1DF31E0100705587 /* Lagranji BanadzevViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3CAFBD1DF31E0100705587 /* Lagranji BanadzevViewController.m */; };
+		CC80A1A71E389D7D00F19EC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC80A1A61E389D7D00F19EC9 /* Main.storyboard */; };
+		CC80A1B71E3B30E200F19EC9 /* CustomCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC80A1B61E3B30E200F19EC9 /* CustomCellCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,14 +57,32 @@
 		CC0C349F1DF55EE2008B8BD0 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		CC0C34A01DF55EE2008B8BD0 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		CC0C34A21DF567D5008B8BD0 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		CC155BF71DF6CB0600762606 /* NewtoniBanadzevViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewtoniBanadzevViewController.h; path = FunkcianeriMotarkumViewController/NewtoniBanadzevViewController/NewtoniBanadzevViewController.h; sourceTree = "<group>"; };
+		CC155BF81DF6CB0600762606 /* NewtoniBanadzevViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewtoniBanadzevViewController.m; path = FunkcianeriMotarkumViewController/NewtoniBanadzevViewController/NewtoniBanadzevViewController.m; sourceTree = "<group>"; };
+		CC155C011DF7FC9100762606 /* UxxankyanBanadzevViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UxxankyanBanadzevViewController.h; path = IntegralneriHashvumViewController/UxxankayanBanadzevViewController/UxxankyanBanadzevViewController.h; sourceTree = "<group>"; };
+		CC155C021DF7FC9100762606 /* UxxankyanBanadzevViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UxxankyanBanadzevViewController.m; path = IntegralneriHashvumViewController/UxxankayanBanadzevViewController/UxxankyanBanadzevViewController.m; sourceTree = "<group>"; };
+		CC155C051DF7FCC400762606 /* SexaniBanadzevViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SexaniBanadzevViewController.h; path = IntegralneriHashvumViewController/SexaniBanadzevViewController/SexaniBanadzevViewController.h; sourceTree = "<group>"; };
+		CC155C061DF7FCC400762606 /* SexaniBanadzevViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SexaniBanadzevViewController.m; path = IntegralneriHashvumViewController/SexaniBanadzevViewController/SexaniBanadzevViewController.m; sourceTree = "<group>"; };
+		CC155C091DF7FCEA00762606 /* SimpsoniBanadzevViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpsoniBanadzevViewController.h; path = IntegralneriHashvumViewController/SimpsoniBanadzevViewController/SimpsoniBanadzevViewController.h; sourceTree = "<group>"; };
+		CC155C0A1DF7FCEA00762606 /* SimpsoniBanadzevViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpsoniBanadzevViewController.m; path = IntegralneriHashvumViewController/SimpsoniBanadzevViewController/SimpsoniBanadzevViewController.m; sourceTree = "<group>"; };
+		CC155C0D1DF7FD1C00762606 /* AniskakanIntegraliHashvumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AniskakanIntegraliHashvumViewController.h; path = IntegralneriHashvumViewController/AniskakanIntegraliHashvumViewController/AniskakanIntegraliHashvumViewController.h; sourceTree = "<group>"; };
+		CC155C0E1DF7FD1C00762606 /* AniskakanIntegraliHashvumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AniskakanIntegraliHashvumViewController.m; path = IntegralneriHashvumViewController/AniskakanIntegraliHashvumViewController/AniskakanIntegraliHashvumViewController.m; sourceTree = "<group>"; };
+		CC155C1B1DF8132100762606 /* HeaderIntegral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HeaderIntegral.h; path = IntegralneriHashvumViewController/HeaderIntegral.h; sourceTree = "<group>"; };
+		CC155C1F1DF814CA00762606 /* CustomIntegralTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIntegralTableViewCell.h; path = IntegralneriHashvumViewController/CustomIntegralTableViewCell/CustomIntegralTableViewCell.h; sourceTree = "<group>"; };
+		CC155C201DF814CA00762606 /* CustomIntegralTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIntegralTableViewCell.m; path = IntegralneriHashvumViewController/CustomIntegralTableViewCell/CustomIntegralTableViewCell.m; sourceTree = "<group>"; };
+		CC155C231DF825FF00762606 /* ErkuPopFuncUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErkuPopFuncUIViewController.h; path = FunkcianeriMotarkumViewController/ErkuPopFuncUIViewController/ErkuPopFuncUIViewController.h; sourceTree = "<group>"; };
+		CC155C241DF825FF00762606 /* ErkuPopFuncUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErkuPopFuncUIViewController.m; path = FunkcianeriMotarkumViewController/ErkuPopFuncUIViewController/ErkuPopFuncUIViewController.m; sourceTree = "<group>"; };
+		CC159CFF1EB8693000B63BD9 /* EyleriDzevapoxvacMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EyleriDzevapoxvacMethodViewController.h; path = DiferencialHavasarumnerViewController/EyleriDzevapoxvacMethodViewController/EyleriDzevapoxvacMethodViewController.h; sourceTree = "<group>"; };
+		CC159D001EB8693000B63BD9 /* EyleriDzevapoxvacMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EyleriDzevapoxvacMethodViewController.m; path = DiferencialHavasarumnerViewController/EyleriDzevapoxvacMethodViewController/EyleriDzevapoxvacMethodViewController.m; sourceTree = "<group>"; };
+		CC159D031EB869E200B63BD9 /* RungKuttiMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RungKuttiMethodViewController.h; path = DiferencialHavasarumnerViewController/RungKuttiMethodViewController/RungKuttiMethodViewController.h; sourceTree = "<group>"; };
+		CC159D041EB869E200B63BD9 /* RungKuttiMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RungKuttiMethodViewController.m; path = DiferencialHavasarumnerViewController/RungKuttiMethodViewController/RungKuttiMethodViewController.m; sourceTree = "<group>"; };
+		CC1B891C1E9EB8FF00E8F6BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC1B891E1E9EB91D00E8F6BF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC1C92F71DF1AC8000E78020 /* DiplomaWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiplomaWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1C92FB1DF1AC8000E78020 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC1C92FD1DF1AC8000E78020 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CC1C92FE1DF1AC8000E78020 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CC1C93041DF1AC8000E78020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC1C93071DF1AC8000E78020 /* DiplomaWork.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DiplomaWork.xcdatamodel; sourceTree = "<group>"; };
-		CC1C93091DF1AC8000E78020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC1C930C1DF1AC8000E78020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC1C930E1DF1AC8000E78020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC1C93131DF1AC8000E78020 /* DiplomaWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiplomaWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1C93171DF1AC8000E78020 /* DiplomaWorkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DiplomaWorkTests.m; sourceTree = "<group>"; };
@@ -65,10 +96,21 @@
 		CC1C93391DF2D0FA00E78020 /* FunkcianeriMotarkumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FunkcianeriMotarkumViewController.m; path = FunkcianeriMotarkumViewController/FunkcianeriMotarkumViewController.m; sourceTree = "<group>"; };
 		CC1C93451DF2D1AE00E78020 /* DiferencialHavasarumnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiferencialHavasarumnerViewController.h; path = DiferencialHavasarumnerViewController/DiferencialHavasarumnerViewController.h; sourceTree = "<group>"; };
 		CC1C93461DF2D1AE00E78020 /* DiferencialHavasarumnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiferencialHavasarumnerViewController.m; path = DiferencialHavasarumnerViewController/DiferencialHavasarumnerViewController.m; sourceTree = "<group>"; };
+		CC27E5A61EAFB77B0004701F /* CustomCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCollectionViewController.h; path = DiferencialHavasarumnerViewController/CustomCollectionViewController/CustomCollectionViewController.h; sourceTree = "<group>"; };
+		CC27E5A71EAFB77B0004701F /* CustomCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCollectionViewController.m; path = DiferencialHavasarumnerViewController/CustomCollectionViewController/CustomCollectionViewController.m; sourceTree = "<group>"; };
+		CC37120B1EA38265000AE4EF /* EylerMethodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EylerMethodViewController.h; path = DiferencialHavasarumnerViewController/EylerMethodViewController/EylerMethodViewController.h; sourceTree = "<group>"; };
+		CC37120C1EA38265000AE4EF /* EylerMethodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EylerMethodViewController.m; path = DiferencialHavasarumnerViewController/EylerMethodViewController/EylerMethodViewController.m; sourceTree = "<group>"; };
+		CC37120F1EA39CB3000AE4EF /* HeaderDiferencial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HeaderDiferencial.h; path = DiferencialHavasarumnerViewController/HeaderDiferencial.h; sourceTree = "<group>"; };
+		CC3712161EA39F0E000AE4EF /* CustomDiferencialTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomDiferencialTableViewCell.h; path = DiferencialHavasarumnerViewController/CustomDiferencialalTableViewCell/CustomDiferencialTableViewCell.h; sourceTree = "<group>"; };
+		CC3712171EA39F0E000AE4EF /* CustomDiferencialTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomDiferencialTableViewCell.m; path = DiferencialHavasarumnerViewController/CustomDiferencialalTableViewCell/CustomDiferencialTableViewCell.m; sourceTree = "<group>"; };
 		CC3CAFB81DF30BE500705587 /* IntegralneriHashvumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntegralneriHashvumViewController.h; path = IntegralneriHashvumViewController/IntegralneriHashvumViewController.h; sourceTree = "<group>"; };
 		CC3CAFB91DF30BE500705587 /* IntegralneriHashvumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntegralneriHashvumViewController.m; path = IntegralneriHashvumViewController/IntegralneriHashvumViewController.m; sourceTree = "<group>"; };
 		CC3CAFBC1DF31E0100705587 /* Lagranji BanadzevViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Lagranji BanadzevViewController.h"; path = "FunkcianeriMotarkumViewController/Lagranji BanadzevViewController/Lagranji BanadzevViewController.h"; sourceTree = "<group>"; };
 		CC3CAFBD1DF31E0100705587 /* Lagranji BanadzevViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Lagranji BanadzevViewController.m"; path = "FunkcianeriMotarkumViewController/Lagranji BanadzevViewController/Lagranji BanadzevViewController.m"; sourceTree = "<group>"; };
+		CC5299B21E66BB7C0064103E /* HeaderCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionViewCell.h; sourceTree = "<group>"; };
+		CC80A1A61E389D7D00F19EC9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		CC80A1B51E3B30E200F19EC9 /* CustomCellCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomCellCollectionViewCell.h; path = FunkcianeriMotarkumViewController/ErkuPopFuncUIViewController/CustomCellCollectionViewCell/CustomCellCollectionViewCell.h; sourceTree = "<group>"; };
+		CC80A1B61E3B30E200F19EC9 /* CustomCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomCellCollectionViewCell.m; path = FunkcianeriMotarkumViewController/ErkuPopFuncUIViewController/CustomCellCollectionViewCell/CustomCellCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +138,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC155BFA1DF6CB0900762606 /* NewtoniBanadzevViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC155BF71DF6CB0600762606 /* NewtoniBanadzevViewController.h */,
+				CC155BF81DF6CB0600762606 /* NewtoniBanadzevViewController.m */,
+			);
+			name = NewtoniBanadzevViewController;
+			sourceTree = "<group>";
+		};
+		CC155BFF1DF6CB5300762606 /* CustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CC0C349F1DF55EE2008B8BD0 /* CustomTableViewCell.h */,
+				CC0C34A01DF55EE2008B8BD0 /* CustomTableViewCell.m */,
+			);
+			name = CustomTableViewCell;
+			sourceTree = "<group>";
+		};
+		CC155C041DF7FCA300762606 /* UxxankayanBanadzevViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC155C011DF7FC9100762606 /* UxxankyanBanadzevViewController.h */,
+				CC155C021DF7FC9100762606 /* UxxankyanBanadzevViewController.m */,
+			);
+			name = UxxankayanBanadzevViewController;
+			sourceTree = "<group>";
+		};
+		CC155C081DF7FCC900762606 /* SexaniBanadzevViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC155C051DF7FCC400762606 /* SexaniBanadzevViewController.h */,
+				CC155C061DF7FCC400762606 /* SexaniBanadzevViewController.m */,
+			);
+			name = SexaniBanadzevViewController;
+			sourceTree = "<group>";
+		};
+		CC155C0C1DF7FCEE00762606 /* SimpsoniBanadzevViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC155C091DF7FCEA00762606 /* SimpsoniBanadzevViewController.h */,
+				CC155C0A1DF7FCEA00762606 /* SimpsoniBanadzevViewController.m */,
+			);
+			name = SimpsoniBanadzevViewController;
+			sourceTree = "<group>";
+		};
+		CC155C101DF7FD1F00762606 /* AniskakanIntegraliHashvumViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC155C0D1DF7FD1C00762606 /* AniskakanIntegraliHashvumViewController.h */,
+				CC155C0E1DF7FD1C00762606 /* AniskakanIntegraliHashvumViewController.m */,
+			);
+			name = AniskakanIntegraliHashvumViewController;
+			sourceTree = "<group>";
+		};
+		CC155C221DF814D300762606 /* CustomIntegralTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CC155C1F1DF814CA00762606 /* CustomIntegralTableViewCell.h */,
+				CC155C201DF814CA00762606 /* CustomIntegralTableViewCell.m */,
+			);
+			name = CustomIntegralTableViewCell;
+			sourceTree = "<group>";
+		};
+		CC155C261DF8260400762606 /* ErkuPopFuncUIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC5299B21E66BB7C0064103E /* HeaderCollectionViewCell.h */,
+				CC80A1B81E3B30E900F19EC9 /* CustomCellCollectionViewCell */,
+				CC155C231DF825FF00762606 /* ErkuPopFuncUIViewController.h */,
+				CC155C241DF825FF00762606 /* ErkuPopFuncUIViewController.m */,
+			);
+			name = ErkuPopFuncUIViewController;
+			sourceTree = "<group>";
+		};
+		CC159D021EB8693700B63BD9 /* EyleriDzevapoxvacMethodViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC159CFF1EB8693000B63BD9 /* EyleriDzevapoxvacMethodViewController.h */,
+				CC159D001EB8693000B63BD9 /* EyleriDzevapoxvacMethodViewController.m */,
+			);
+			name = EyleriDzevapoxvacMethodViewController;
+			sourceTree = "<group>";
+		};
+		CC159D061EB869EE00B63BD9 /* RungKuttiMethodViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC159D031EB869E200B63BD9 /* RungKuttiMethodViewController.h */,
+				CC159D041EB869E200B63BD9 /* RungKuttiMethodViewController.m */,
+			);
+			name = RungKuttiMethodViewController;
+			sourceTree = "<group>";
+		};
 		CC1C92EE1DF1AC8000E78020 = {
 			isa = PBXGroup;
 			children = (
@@ -122,9 +256,9 @@
 				CC1C93371DF2D0A900E78020 /* AppDelegate */,
 				CC1C93361DF2D08900E78020 /* MenuViewController */,
 				CC1C933B1DF2D0FD00E78020 /* FunkcianeriMotarkumViewController */,
-				CC1C93481DF2D1BA00E78020 /* DiferencialHavasarumnerViewController */,
 				CC3CAFBB1DF30BE900705587 /* IntegralneriHashvumViewController */,
-				CC1C93031DF1AC8000E78020 /* Main.storyboard */,
+				CC1C93481DF2D1BA00E78020 /* DiferencialHavasarumnerViewController */,
+				CC80A1A61E389D7D00F19EC9 /* Main.storyboard */,
 				CC1C933C1DF2D11800E78020 /* Other */,
 				CC1C92FA1DF1AC8000E78020 /* Supporting Files */,
 			);
@@ -178,9 +312,13 @@
 		CC1C933B1DF2D0FD00E78020 /* FunkcianeriMotarkumViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CC3CAFBF1DF31E0A00705587 /* Lagranji BanadzevViewController */,
 				CC1C93381DF2D0FA00E78020 /* FunkcianeriMotarkumViewController.h */,
 				CC1C93391DF2D0FA00E78020 /* FunkcianeriMotarkumViewController.m */,
+				CC0C34A21DF567D5008B8BD0 /* Header.h */,
+				CC155BFF1DF6CB5300762606 /* CustomTableViewCell */,
+				CC3CAFBF1DF31E0A00705587 /* Lagranji BanadzevViewController */,
+				CC155BFA1DF6CB0900762606 /* NewtoniBanadzevViewController */,
+				CC155C261DF8260400762606 /* ErkuPopFuncUIViewController */,
 			);
 			name = FunkcianeriMotarkumViewController;
 			sourceTree = "<group>";
@@ -188,8 +326,8 @@
 		CC1C933C1DF2D11800E78020 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				CC1C93091DF1AC8000E78020 /* Assets.xcassets */,
-				CC1C930B1DF1AC8000E78020 /* LaunchScreen.storyboard */,
+				CC1B891C1E9EB8FF00E8F6BF /* Assets.xcassets */,
+				CC1B891E1E9EB91D00E8F6BF /* LaunchScreen.storyboard */,
 				CC1C930E1DF1AC8000E78020 /* Info.plist */,
 				CC1C93061DF1AC8000E78020 /* DiplomaWork.xcdatamodeld */,
 			);
@@ -199,17 +337,56 @@
 		CC1C93481DF2D1BA00E78020 /* DiferencialHavasarumnerViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CC37120F1EA39CB3000AE4EF /* HeaderDiferencial.h */,
 				CC1C93451DF2D1AE00E78020 /* DiferencialHavasarumnerViewController.h */,
 				CC1C93461DF2D1AE00E78020 /* DiferencialHavasarumnerViewController.m */,
+				CC27E5A91EAFB7830004701F /* CustomCollectionViewController */,
+				CC3712191EA39F1E000AE4EF /* CustomDiferencialTableViewCell */,
+				CC37120E1EA3826A000AE4EF /* EylerMethodViewController */,
+				CC159D021EB8693700B63BD9 /* EyleriDzevapoxvacMethodViewController */,
+				CC159D061EB869EE00B63BD9 /* RungKuttiMethodViewController */,
 			);
 			name = DiferencialHavasarumnerViewController;
+			sourceTree = "<group>";
+		};
+		CC27E5A91EAFB7830004701F /* CustomCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC27E5A61EAFB77B0004701F /* CustomCollectionViewController.h */,
+				CC27E5A71EAFB77B0004701F /* CustomCollectionViewController.m */,
+			);
+			name = CustomCollectionViewController;
+			sourceTree = "<group>";
+		};
+		CC37120E1EA3826A000AE4EF /* EylerMethodViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC37120B1EA38265000AE4EF /* EylerMethodViewController.h */,
+				CC37120C1EA38265000AE4EF /* EylerMethodViewController.m */,
+			);
+			name = EylerMethodViewController;
+			sourceTree = "<group>";
+		};
+		CC3712191EA39F1E000AE4EF /* CustomDiferencialTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CC3712161EA39F0E000AE4EF /* CustomDiferencialTableViewCell.h */,
+				CC3712171EA39F0E000AE4EF /* CustomDiferencialTableViewCell.m */,
+			);
+			name = CustomDiferencialTableViewCell;
 			sourceTree = "<group>";
 		};
 		CC3CAFBB1DF30BE900705587 /* IntegralneriHashvumViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CC155C1B1DF8132100762606 /* HeaderIntegral.h */,
 				CC3CAFB81DF30BE500705587 /* IntegralneriHashvumViewController.h */,
 				CC3CAFB91DF30BE500705587 /* IntegralneriHashvumViewController.m */,
+				CC155C221DF814D300762606 /* CustomIntegralTableViewCell */,
+				CC155C041DF7FCA300762606 /* UxxankayanBanadzevViewController */,
+				CC155C081DF7FCC900762606 /* SexaniBanadzevViewController */,
+				CC155C0C1DF7FCEE00762606 /* SimpsoniBanadzevViewController */,
+				CC155C101DF7FD1F00762606 /* AniskakanIntegraliHashvumViewController */,
 			);
 			name = IntegralneriHashvumViewController;
 			sourceTree = "<group>";
@@ -219,11 +396,17 @@
 			children = (
 				CC3CAFBC1DF31E0100705587 /* Lagranji BanadzevViewController.h */,
 				CC3CAFBD1DF31E0100705587 /* Lagranji BanadzevViewController.m */,
-				CC0C34A21DF567D5008B8BD0 /* Header.h */,
-				CC0C349F1DF55EE2008B8BD0 /* CustomTableViewCell.h */,
-				CC0C34A01DF55EE2008B8BD0 /* CustomTableViewCell.m */,
 			);
 			name = "Lagranji BanadzevViewController";
+			sourceTree = "<group>";
+		};
+		CC80A1B81E3B30E900F19EC9 /* CustomCellCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CC80A1B51E3B30E200F19EC9 /* CustomCellCollectionViewCell.h */,
+				CC80A1B61E3B30E200F19EC9 /* CustomCellCollectionViewCell.m */,
+			);
+			name = CustomCellCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,9 +515,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC1C930D1DF1AC8000E78020 /* LaunchScreen.storyboard in Resources */,
-				CC1C930A1DF1AC8000E78020 /* Assets.xcassets in Resources */,
-				CC1C93051DF1AC8000E78020 /* Main.storyboard in Resources */,
+				CC1B891F1E9EB91D00E8F6BF /* LaunchScreen.storyboard in Resources */,
+				CC1B891D1E9EB8FF00E8F6BF /* Assets.xcassets in Resources */,
+				CC80A1A71E389D7D00F19EC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,13 +544,26 @@
 			files = (
 				CC1C93081DF1AC8000E78020 /* DiplomaWork.xcdatamodeld in Sources */,
 				CC1C933A1DF2D0FA00E78020 /* FunkcianeriMotarkumViewController.m in Sources */,
+				CC155BF91DF6CB0600762606 /* NewtoniBanadzevViewController.m in Sources */,
+				CC37120D1EA38265000AE4EF /* EylerMethodViewController.m in Sources */,
+				CC155C211DF814CA00762606 /* CustomIntegralTableViewCell.m in Sources */,
+				CC155C0F1DF7FD1C00762606 /* AniskakanIntegraliHashvumViewController.m in Sources */,
 				CC3CAFBE1DF31E0100705587 /* Lagranji BanadzevViewController.m in Sources */,
+				CC27E5A81EAFB77B0004701F /* CustomCollectionViewController.m in Sources */,
+				CC159D011EB8693000B63BD9 /* EyleriDzevapoxvacMethodViewController.m in Sources */,
+				CC155C0B1DF7FCEA00762606 /* SimpsoniBanadzevViewController.m in Sources */,
+				CC155C251DF825FF00762606 /* ErkuPopFuncUIViewController.m in Sources */,
+				CC155C031DF7FC9100762606 /* UxxankyanBanadzevViewController.m in Sources */,
 				CC3CAFBA1DF30BE500705587 /* IntegralneriHashvumViewController.m in Sources */,
+				CC80A1B71E3B30E200F19EC9 /* CustomCellCollectionViewCell.m in Sources */,
 				CC1C92FF1DF1AC8000E78020 /* AppDelegate.m in Sources */,
 				CC0C34A11DF55EE2008B8BD0 /* CustomTableViewCell.m in Sources */,
 				CC1C92FC1DF1AC8000E78020 /* main.m in Sources */,
+				CC159D051EB869E200B63BD9 /* RungKuttiMethodViewController.m in Sources */,
 				CC1C93351DF2D07D00E78020 /* MenuViewController.m in Sources */,
+				CC3712181EA39F0E000AE4EF /* CustomDiferencialTableViewCell.m in Sources */,
 				CC1C93471DF2D1AE00E78020 /* DiferencialHavasarumnerViewController.m in Sources */,
+				CC155C071DF7FCC400762606 /* SexaniBanadzevViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,25 +597,6 @@
 			targetProxy = CC1C931F1DF1AC8000E78020 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CC1C93031DF1AC8000E78020 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC1C93041DF1AC8000E78020 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CC1C930B1DF1AC8000E78020 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC1C930C1DF1AC8000E78020 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CC1C93251DF1AC8000E78020 /* Debug */ = {
