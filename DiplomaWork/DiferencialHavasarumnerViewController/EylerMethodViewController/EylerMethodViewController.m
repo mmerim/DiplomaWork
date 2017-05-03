@@ -174,12 +174,25 @@
 }
 
 #pragma mark -Counting Eyler
+/*
+ for(int k = 0; k < m; ++k) {
+    fArr[k] = 0;
+    for(int i = 0, p = 0; i < m + 1; ++i) {
+        for(int j = 0; j < m - i + 1; ++j, ++p) {
+            fArr[k] += a[p] * pow(xArr[k],i) * pow(yArr[k], j);}
+        }
+        if(0 != k) {
+            yArr[k] = yArr[k - 1] + (h * fArr[k - 1]);
+        }
+    }
+ }
+ */
 -(NSInteger)countEyler{
     for(int i = 1; i < self.numberOfN + 1; ++i) {
         NSNumber *current = @(self.x0Value.text.doubleValue + (i * self.hValue.text.doubleValue));
         [self.arrayOfXValues insertObject:current atIndex:i];
 //        [self.arrayOfXValues addObject:current];
-                                        NSLog(@"%@", self.arrayOfXValues[i]);
+        NSLog(@"%@", self.arrayOfXValues[i]);
     }
     
     for(int k = 0; k < self.numberOfN; ++k) {
@@ -202,6 +215,7 @@
 }
 
 /*
+ // NEED TO BE BUTTON---> TABLE VIEW OR COLLECTION VIEW
 #pragma mark - UIAlertView
 -(IBAction)Alert{
     NSInteger m = [self countEyler];
