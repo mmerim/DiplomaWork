@@ -37,13 +37,13 @@
         return YES;
     }
     [self.stacox saveValue:self.yValueTextField.text keyY:self.key];
+    NSLog(@"y==%@", self.yValueTextField.text);
     return YES;
 }
 
 -(void)updateCell:(NSInteger) row yValue:(NSString *)yvalue  {
     [self.yValueTextField setText: yvalue];
     self.key = [NSString stringWithFormat:@"Y%ld", (long)row];
-    
     
     [self.yLable setText: [self.key stringByAppendingString: @" ="]];
 }

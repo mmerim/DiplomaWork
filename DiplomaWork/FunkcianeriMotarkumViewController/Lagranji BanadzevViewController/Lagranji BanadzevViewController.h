@@ -11,6 +11,6 @@
 
 @interface Lagranji_BanadzevViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, TestProtocol>
 
--(NSInteger)countLagrange;
+-(double)countLagrange;
 
 @end

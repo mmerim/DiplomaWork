@@ -11,6 +11,6 @@
 
 @interface SexaniBanadzevViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, TestProtocol>
 
--(NSInteger)countSexan;
+-(double)countSexan;
 
 @end

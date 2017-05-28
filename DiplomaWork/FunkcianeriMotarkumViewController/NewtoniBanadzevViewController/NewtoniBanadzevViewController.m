@@ -96,7 +96,7 @@
 
 #pragma mark - TableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.numberOfN;
+    return self.numberOfN + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -186,8 +186,8 @@ float NewtonFunc(int n, float *x, float* y, float a) {
     return sum;
 }
 */
--(NSInteger)countNewton{
-    NSInteger sum = 0;
+-(double)countNewton{
+    double sum = 0;
     
     for (int j = 0; j < self.numberOfN; ++j) {
         for (int i = (int)self.numberOfN-1; i > j; --i) {
@@ -209,7 +209,7 @@ float NewtonFunc(int n, float *x, float* y, float a) {
         }
     }
     for(int i = (int)self.numberOfN; i >= 0; --i) {
-        NSInteger mult = 1;
+        double mult = 1;
         for(int j = 0; j < i; ++j){
             NSString *xJKey = [NSString stringWithFormat: @"X%ld",(long)j];
             NSInteger xJ = [[self.dic valueForKey: xJKey] integerValue];
@@ -226,13 +226,12 @@ float NewtonFunc(int n, float *x, float* y, float a) {
 
 #pragma mark - UIAlertView
 -(IBAction)Alert{
-    NSInteger m = [self countNewton];
-    NSLog(@"%ld", (long)m);
-    NSString *inStr = [NSString stringWithFormat: @"%ld", (long)m];
+    double m = [self countNewton];
+    NSLog(@"%f", m);
+    NSString *inStr = [NSString stringWithFormat: @"%f", m];
     
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Sum"
-                                 message:inStr
+                                 alertControllerWithTitle:@"Նյուտոնի ինտերպոլացիոն բանաձեւի արդյունքը՝"                                 message:inStr
                                  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* yesButton = [UIAlertAction
                                 actionWithTitle:@"OK"

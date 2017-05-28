@@ -31,7 +31,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
-    
+
     //bolor@ tver chen
     if ([textField.text rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound) {
         [self.aValueTextField setText: @""];
@@ -41,17 +41,12 @@
     return YES;
 }
 
--(void)updateCell:(NSInteger) row aValue:(NSString *)yvalue  {
-    [self.aValueTextField setText: yvalue];
-    EylerMethodViewController *e = [[EylerMethodViewController alloc]init];
-    for(int i = 0; i <= e.numberOfN; ++i) {
-        for(int j = 0; j <= e.numberOfN - i; ++j) {
-            NSLog(@"%d %d", i, j);
-            self.key = [NSString stringWithFormat:@"a%d%d", i, j];
-        }
-    }
-//    self.key = [NSString stringWithFormat:@"a%ld", (long)row];
+-(void)updateCell:(NSInteger) row aValue:(NSString *)avalue  {
+    [self.aValueTextField setText: avalue];
+    self.key = [NSString stringWithFormat:@"a%ld", (long)row];
+    
     [self.aLable setText: [self.key stringByAppendingString: @" ="]];
 }
+
 
 @end

@@ -11,7 +11,10 @@
 
 @protocol TestProtocol
 
+@optional
 -(void)saveValue:(NSString *) labelTextX keyX:(NSString *)key saveValue:(NSString *) labelTextY keyY:(NSString *)key;
+
+-(void)saveValue:(NSString *) labelTextZ keyZ:(NSString *)key;
 
 @end
 

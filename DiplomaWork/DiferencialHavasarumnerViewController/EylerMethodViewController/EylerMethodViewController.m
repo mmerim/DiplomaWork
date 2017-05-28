@@ -6,6 +6,7 @@
 //  Copyright © 2017 Meri. All rights reserved.
 //
 
+#import "ResultViewController.h"
 #import "EylerMethodViewController.h"
 #import "CustomDiferencialTableViewCell.h"
 
@@ -30,8 +31,8 @@
 
 @end
 
-@implementation EylerMethodViewController
 
+@implementation EylerMethodViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -47,9 +48,8 @@
     
     //given elements of arrays
     if (!self.arrayOfXValues) self.arrayOfXValues = [[NSMutableArray alloc] init];
-    self.arrayOfXValues[0] = self.x0Value;
     if (!self.arrayOfYValues) self.arrayOfYValues = [[NSMutableArray alloc] init];
-    self.arrayOfYValues[0] = self.y0Value;
+    if (!self.arrayOfFValues) self.arrayOfFValues = [[NSMutableArray alloc] init];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -67,19 +67,19 @@
     [super didReceiveMemoryWarning];
 }
 
--(void) clearContents{
-    [self.hValue setText:@""];
-    [self.x0Value setText:@""];
-    [self.y0Value setText:@""];
-}
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    [self.hValue setText:@"0.01"];
+    [self.x0Value setText:@"0"];
+    [self.y0Value setText:@"0"];
     if ([textField.text rangeOfCharacterFromSet:[NSCharacterSet letterCharacterSet]].location != NSNotFound) {
-        [self clearContents];
+        [self.hValue setText:@""];
+        [self.x0Value setText:@""];
+        [self.y0Value setText:@""];
     }
     return YES;
 }
+
 
 #pragma mark - PickerView
 // The number of columns of data
@@ -101,6 +101,7 @@
     [self.tableView reloadData];
 }
 
+
 #pragma mark - TableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     NSInteger count = ( (self.numberOfN + 1) * (self.numberOfN + 2) ) / 2;
@@ -108,19 +109,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     CustomDiferencialTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     [cell setStacox: self];
-    EylerMethodViewController *e = [[EylerMethodViewController alloc] init];
-    for(int i = 0; i <= e.numberOfN; ++i) {
-        for(int j = 0; j <= e.numberOfN - i; ++j) {
-            self.aValue = [self.dic valueForKey: [NSString stringWithFormat: @"a%d%d",i, j]];
-        }
-    }
-    //NSLog(@"-->%@", self.aValue);
+    self.aValue = [self.dic valueForKey: [NSString stringWithFormat: @"a%ld",(long)indexPath.row]];
     [cell updateCell:indexPath.row aValue: self.aValue];
     return cell;
 }
+
 
 #pragma mark - Hide keyboard when touching in the background
 - (void)handleSingleTap:(UITapGestureRecognizer *) sender {
@@ -134,6 +129,7 @@
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
 }
+
 
 #pragma mark - Keyboard
 -(void)addKeyboardObservsers {
@@ -160,7 +156,6 @@
 
 -(void)keyboardHidden:(NSNotification*)notification {
     double animationDuration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    
     [UIView animateWithDuration:animationDuration
                      animations:^{
                          self.tableView.contentInset = UIEdgeInsetsZero;
@@ -169,81 +164,51 @@
 }
 
 -(void)saveValue:(NSString *) labelTextA keyA:(NSString *)key {
-    [self.dic setValue: labelTextA forKey: key];
-    //    NSLog(@"%@",self.dic);
+    [self.dic setValue: labelTextA forKey: key];}
+
+#pragma mark -Count Eyler
+-(void)countFx:(double)x  y:(double)y  k:(int)k {
+    double sum = 0;
+    for(int i = 0, p = 0; i < self.numberOfN + 1; ++i) {
+        for(int j = 0; j < self.numberOfN - i + 1; ++j, ++p) {
+            NSString *aIKey = [NSString stringWithFormat: @"a%ld",(long)p];
+            double aI = [[self.dic valueForKey: aIKey] integerValue];
+            NSNumber *x = [self.arrayOfXValues objectAtIndex:k];
+            NSNumber *y = [self.arrayOfYValues objectAtIndex:k];
+            double current = aI * x.doubleValue * y.doubleValue;
+            current = aI * pow(x.doubleValue, i)* pow(y.doubleValue, j);
+            sum += current;
+        }}
+    [self.arrayOfFValues insertObject:[NSNumber numberWithDouble:sum] atIndex:k];
 }
 
-#pragma mark -Counting Eyler
-/*
- for(int k = 0; k < m; ++k) {
-    fArr[k] = 0;
-    for(int i = 0, p = 0; i < m + 1; ++i) {
-        for(int j = 0; j < m - i + 1; ++j, ++p) {
-            fArr[k] += a[p] * pow(xArr[k],i) * pow(yArr[k], j);}
-        }
-        if(0 != k) {
-            yArr[k] = yArr[k - 1] + (h * fArr[k - 1]);
-        }
-    }
- }
- */
--(NSInteger)countEyler{
+-(void)countEyler{
+    self.arrayOfXValues[0] = [NSNumber numberWithDouble:self.x0Value.text.doubleValue];
+    self.arrayOfYValues[0] = [NSNumber numberWithDouble:self.y0Value.text.doubleValue];
     for(int i = 1; i < self.numberOfN + 1; ++i) {
-        NSNumber *current = @(self.x0Value.text.doubleValue + (i * self.hValue.text.doubleValue));
-        [self.arrayOfXValues insertObject:current atIndex:i];
-//        [self.arrayOfXValues addObject:current];
-        NSLog(@"%@", self.arrayOfXValues[i]);
+        self.arrayOfXValues[i] = [NSNumber numberWithDouble:self.x0Value.text.doubleValue + (i * self.hValue.text.doubleValue)];
     }
-    
     for(int k = 0; k < self.numberOfN; ++k) {
-//        [self.arrayOfFValues insertObject:0 atIndex:k];
+        self.arrayOfFValues[0] = [NSNumber numberWithDouble:0];
+        NSNumber *xk = [self.arrayOfXValues objectAtIndex:k];
+        NSNumber *yk = [self.arrayOfYValues objectAtIndex:k];
+        [self countFx:xk.doubleValue y:yk.doubleValue k:k];
+        NSNumber *fk = [self.arrayOfFValues objectAtIndex:k] ;
+        double current = yk.doubleValue + (self.hValue.text.doubleValue * fk.doubleValue);
+        self.arrayOfYValues[k + 1] = [NSNumber numberWithDouble:current];
+}}
 
-//        self.arrayOfFValues[k] = 0;
-        for(int i = 0, p = 0; i < self.numberOfN + 1; ++i) {
-            for(int j = 0; j < self.numberOfN - i + 1; ++j, ++p) {
-              //  NSNumber *current = pow([self.arrayOfXValues objectAtIndex:k], i);//([self.arrayOfXValues objectAtIndex:k], i);// * pow(yArr[k], j
-                
-//                [self.arrayOfFValues insertObject:0 atIndex:k];
-          //      fArr[k] += a[p] * pow(xArr[k],i) * pow(yArr[k], j);
-            }
-        }
-        if(0 != k) {
-    //        yArr[k] = yArr[k - 1] + (h * fArr[k - 1]);
-        }
+- (IBAction)hashvelButtonClicked:(id)sender {
+    [self countEyler];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqual: @"result"]){
+        ResultViewController *result = ( ResultViewController *)segue.destinationViewController;
+        [result showResultX: self.arrayOfXValues
+                                     Y:self.arrayOfYValues
+                    numberOfN:self.numberOfN
+                                 title:@"Էյլերի մեթոդի արդյունքը՝"];
     }
-    return 1 ;
 }
-
-/*
- // NEED TO BE BUTTON---> TABLE VIEW OR COLLECTION VIEW
-#pragma mark - UIAlertView
--(IBAction)Alert{
-    NSInteger m = [self countEyler];
-    NSLog(@"%ld", (long)m);
-    NSString *inStr = [NSString stringWithFormat: @"%ld", (long)m];
-    
-    UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Sum"
-                                 message:inStr
-                                 preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* yesButton = [UIAlertAction
-                                actionWithTitle:@"OK"
-                                style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction * action) {
-                                }];
-    //
-    //    UIAlertAction* noButton = [UIAlertAction
-    //                               actionWithTitle:@"No, thanks"
-    //                               style:UIAlertActionStyleDefault
-    //                               handler:^(UIAlertAction * action) {
-    //                                   //Handle no, thanks button
-    //                               }];
-    
-    [alert addAction:yesButton];
-    //    [alert addAction:noButton];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-}
-*/
 
 @end

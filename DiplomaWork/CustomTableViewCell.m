@@ -43,8 +43,8 @@
         [self.valueTextFieldY setText: @""];
         return YES;
     }
-    
-    
+    NSLog(@"x = %@", self.valueTextField.text);
+    NSLog(@"y = %@", self.valueTextFieldY.text);
     [self.stacox saveValue:self.valueTextField.text keyX:self.key saveValue:self.valueTextFieldY.text   keyY:self.key1];
     return YES;
 }
@@ -54,6 +54,9 @@
     [self.valueTextFieldY setText: yValue];
     self.key = [NSString stringWithFormat:@"X%ld", (long)row];
     self.key1 = [NSString stringWithFormat:@"Y%ld", (long)row];
+//    
+//    NSLog(@"key = %@", self.key);
+//    NSLog(@"key1 = %@", self.key1);
     
     [self.xLable setText: [self.key stringByAppendingString: @" ="]];
     [self.yLable setText: [self.key1 stringByAppendingString: @" ="]];

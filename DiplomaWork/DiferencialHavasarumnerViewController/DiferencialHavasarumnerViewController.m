@@ -33,7 +33,7 @@
     
     self.RungKortButton.titleLabel.numberOfLines =0;
     [self.RungKortButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [self.RungKortButton setTitle:@"Ռունգ-Կուտտի մեթոդ" forState:UIControlStateNormal];
+    [self.RungKortButton setTitle:@"Ռունգե-Կուտտի մեթոդ" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"white.png"]];
     self.navigationItem.title = @"Ուղղանյան բանաձեւ";
     [self.hashvelButton setTitle:@"Հաշվել" forState:UIControlStateNormal];
     
@@ -96,8 +96,9 @@
     CustomIntegralTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     [cell setStacox: self];
     self.yValue = [self.dic valueForKey: [NSString stringWithFormat: @"Y%ld",(long)indexPath.row]];
-    NSLog(@"-->%@", self.yValue);
+//    NSLog(@"-->%@", self.yValue);
     [cell updateCell:indexPath.row yValue: self.yValue];
+    NSLog(@"y-->%@", self.yValue);
     return cell;
 }
 
@@ -148,15 +149,17 @@
                          self.tableView.scrollIndicatorInsets =UIEdgeInsetsZero;
                      }];
 }
+
 -(void)saveValue:(NSString *) labelTextY keyY:(NSString *)key {
     [self.dic setValue: labelTextY forKey: key];
-    //    NSLog(@"%@",self.dic);
+    NSLog(@"yy==%@", [self.dic valueForKey:key]);
 }
 
-#pragma mark -Counting Uxxankyun
--(NSInteger)countUxxankyun{
-    NSInteger h = (self.bValue.text.integerValue - self.aValue.text.integerValue) / self.numberOfN;
-    NSInteger sum = 0;
+#pragma mark -Count Uxxankyun
+-(double)countUxxankyun{
+    double h = (self.bValue.text.doubleValue - self.aValue.text.doubleValue) / self.numberOfN;
+    NSLog(@"h=%f", h);
+    double sum = 0;
     for (int i = 0; i < self.numberOfN; ++i) {
         NSString *yIKey = [NSString stringWithFormat: @"Y%ld",(long)i];
         NSInteger yI = [[self.dic valueForKey: yIKey] integerValue];
@@ -167,12 +170,12 @@
 
 #pragma mark - UIAlertView
 -(IBAction)Alert{
-    NSInteger m = [self countUxxankyun];
-    NSLog(@"%ld", (long)m);
-    NSString *inStr = [NSString stringWithFormat: @"%ld", (long)m];
+    double m = [self countUxxankyun];
+    NSLog(@"%f", m);
+    NSString *inStr = [NSString stringWithFormat: @"%f", m];
     
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Sum"
+                                 alertControllerWithTitle:@"Ուղղանկյան բանաձեւի արդյունք՝"
                                  message:inStr
                                  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* yesButton = [UIAlertAction
@@ -180,16 +183,8 @@
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action) {
                                 }];
-    //
-    //    UIAlertAction* noButton = [UIAlertAction
-    //                               actionWithTitle:@"No, thanks"
-    //                               style:UIAlertActionStyleDefault
-    //                               handler:^(UIAlertAction * action) {
-    //                                   //Handle no, thanks button
-    //                               }];
-    
     [alert addAction:yesButton];
-    //    [alert addAction:noButton];
+    
     
     [self presentViewController:alert animated:YES completion:nil];
 }

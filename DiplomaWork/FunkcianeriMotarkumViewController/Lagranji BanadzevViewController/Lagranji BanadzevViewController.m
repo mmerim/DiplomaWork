@@ -68,20 +68,17 @@ return YES;
 }
 
 
+#pragma mark - PickerView
 // The number of columns of data
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
-
+//
 // The number of rows of data
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-{
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     return 900;
 }
 
-
-#pragma mark - PickerView
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     return  [NSString stringWithFormat:@"%ld",(long)row+1];
@@ -103,15 +100,19 @@ return YES;
 
 #pragma mark - TableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.numberOfN;
+    return self.numberOfN + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     [cell setStacox: self];
+    
+//    NSLog(@"y-- %@   x--%@", [self.dic valueForKey: [NSString stringWithFormat: @"X%ld",(long)indexPath.row]], [self.dic valueForKey: [NSString stringWithFormat: @"Y%ld",(long)indexPath.row]]);
+    
     self.xValue = [self.dic valueForKey: [NSString stringWithFormat: @"X%ld",(long)indexPath.row]];
     self.yValue = [self.dic valueForKey: [NSString stringWithFormat: @"Y%ld",(long)indexPath.row]];
     [cell updateCell:indexPath.row xValue: self.xValue yValue: self.yValue];
+    NSLog(@"y-- %@   x--%@", [self.dic valueForKey: [NSString stringWithFormat: @"X%ld",(long)indexPath.row]], [self.dic valueForKey: [NSString stringWithFormat: @"Y%ld",(long)indexPath.row]]);
     return cell;
 }
 
@@ -153,7 +154,6 @@ return YES;
         self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
     }];
     
-    
 }
 
 -(void)keyboardHidden:(NSNotification*)notification {
@@ -171,42 +171,34 @@ return YES;
 }
 
 #pragma mark -Counting Lagrange
--(NSInteger)countLagrange{
-    NSInteger sum = 0;
-    for (int i = 0; i < self.numberOfN; ++i) {
-        NSInteger mult = 1;
-       for (int j = 0; j < self.numberOfN; ++j) {
-        
+-(double)countLagrange{
+    double sum = 0;
+    for (int i = 0; i <= self.numberOfN; ++i) {
+        double mult = 1;
+       for (int j = 0; j <= self.numberOfN; ++j) {
            NSString *xIKey = [NSString stringWithFormat: @"X%ld",(long)i];
            NSInteger xI = [[self.dic valueForKey: xIKey] integerValue];
            NSString *xJKey = [NSString stringWithFormat: @"X%ld",(long)j];
            NSInteger xJ = [[self.dic valueForKey: xJKey] integerValue];
-//           NSLog(@"i=%d j=%d ---- xj=%ld mult = %ld", i, j, (long)xJ, (long)mult);
-           
            if (j != i) {
-               mult *= (self.valueForCount.text.integerValue - xJ) / (xI - xJ);
-               NSLog(@"%ld", (long)mult);
+               mult *= (double)(self.valueForCount.text.integerValue - xJ) / (xI - xJ);
            }
-           
        }
-        
         NSString *yIKey = [NSString stringWithFormat: @"Y%ld",(long)i];
         NSInteger yI = [[self.dic valueForKey: yIKey] integerValue];
-//        NSLog(@"y=%ld", (long)yI);
         sum += (mult * yI);
-        NSLog(@"%ld", (long)sum);
     }
     return sum;
 }
 
 #pragma mark - UIAlertView
 -(IBAction)Alert{
-    NSInteger m = [self countLagrange];
-    NSLog(@"%ld", (long)m);
-    NSString *inStr = [NSString stringWithFormat: @"%ld", (long)m];
+    double m = [self countLagrange];
+    NSLog(@"%f", m);
+    NSString *inStr = [NSString stringWithFormat: @"%f", m];
     
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Sum"
+                                 alertControllerWithTitle:@"Լագրանժի ինտերպոլացիոն բանաձեւի արդյունքը՝"
                                  message:inStr
                                  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* yesButton = [UIAlertAction
@@ -218,4 +210,5 @@ return YES;
     
     [self presentViewController:alert animated:YES completion:nil];
 }
+
 @end

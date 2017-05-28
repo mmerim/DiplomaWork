@@ -11,7 +11,6 @@
 
 @interface UxxankyanBanadzevViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, TestProtocol>
 
--(NSInteger)countUxxankyun;
-
+-(double)countUxxankyun;
 
 @end

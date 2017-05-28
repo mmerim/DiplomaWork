@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "HeaderDiferencial.h"
+#import "ResultViewController.h"
 
 @interface EylerMethodViewController  : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, TestProtocol>
 
 // for indexes
 @property (assign, nonatomic) NSInteger numberOfN;
 
--(NSInteger)countEyler;
+-(void)countEyler;
+
+
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HeaderCollectionViewCell.h"
+#import "Header.h"
+#import "CustomTableViewCellErkuPop.h"
 
-@interface ErkuPopFuncUIViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, TestProtocol>
+@interface ErkuPopFuncUIViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, TestProtocol>
+
+-(NSInteger)countErkuPopoxakan;
 
 @end

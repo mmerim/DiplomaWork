@@ -98,7 +98,7 @@
 
 #pragma mark - TableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.numberOfN;
+    return self.numberOfN + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -165,32 +165,36 @@
     //    NSLog(@"%@",self.dic);
 }
 #pragma mark -Counting Simpson
--(NSInteger)countSimpson{
-    NSInteger h = (self.bValue.text.integerValue - self.aValue.text.integerValue) / self.numberOfN;
-    NSInteger sum = 0;
-    for (int i = 1; i <= self.numberOfN/2; ++i) {
-        NSString *y2I2Key = [NSString stringWithFormat: @"Y%ld",(long)2*i-2];
-        NSInteger yI2 = [[self.dic valueForKey: y2I2Key] integerValue];
-
+-(double)countSimpson{
+    double h = (self.bValue.text.doubleValue - self.aValue.text.doubleValue) / self.numberOfN;
+    double sum1 = 0;
+    for (int i = 1; i <= self.numberOfN - 1; ++i) {
+        NSString *yIKey = [NSString stringWithFormat: @"Y%ld",(long)2*i];
+        NSInteger yI = [[self.dic valueForKey: yIKey] integerValue];
+        sum1 += yI;
+    }
+    double sum2 = 0;
+    for (int i = 1; i <= self.numberOfN; ++i) {
         NSString *y2I1Key = [NSString stringWithFormat: @"Y%ld",(long)2*i-1];
         NSInteger yI1 = [[self.dic valueForKey: y2I1Key] integerValue];
-        
-        NSString *y2IKey = [NSString stringWithFormat: @"Y%ld",(long)2*i];
-        NSInteger y2I = [[self.dic valueForKey: y2IKey] integerValue];
-
-        sum += yI2 + (4*yI1) + y2I;
+        sum2 += yI1;
     }
-    return sum * (h/3);
+    NSString *y0Key = [NSString stringWithFormat: @"Y%ld",(long)0];
+    NSInteger y0 = [[self.dic valueForKey: y0Key] integerValue];
+    NSString *y2nKey = [NSString stringWithFormat: @"Y%ld",(long)self.numberOfN];
+    NSInteger y2n = [[self.dic valueForKey: y2nKey] integerValue];
+    double sum = (h / 3) * (y0 + (2*sum1) + (4*sum2) + y2n);
+    return sum;
 }
 
 #pragma mark - UIAlertView
 -(IBAction)Alert{
-    NSInteger m = [self countSimpson];
-    NSLog(@"%ld", (long)m);
-    NSString *inStr = [NSString stringWithFormat: @"%ld", (long)m];
+    double m = [self countSimpson];
+    NSLog(@"%f", m);
+    NSString *inStr = [NSString stringWithFormat: @"%f", m];
     
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Sum"
+                                 alertControllerWithTitle:@"Սիմպսոնի բանաձեւի արդյունք՝"
                                  message:inStr
                                  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* yesButton = [UIAlertAction

@@ -11,6 +11,6 @@
 
 @interface NewtoniBanadzevViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, TestProtocol>
 
--(NSInteger)countNewton;
+-(double)countNewton;
 
 @end

@@ -11,7 +11,7 @@
 
 @interface SimpsoniBanadzevViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource, TestProtocol>
 
--(NSInteger)countSimpson;
+-(double)countSimpson;
 
 
 @end

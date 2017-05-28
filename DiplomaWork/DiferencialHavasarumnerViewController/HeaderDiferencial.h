@@ -11,7 +11,9 @@
 
 @protocol TestProtocol
 
+@optional
 -(void)saveValue:(NSString *) labelTextA keyA:(NSString *)key;
+//-(void)showResultX:(NSMutableArray *)xArr Y:(NSMutableArray *)yArr numberOfN:(NSInteger)n;
 
 @end
 

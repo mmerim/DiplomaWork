@@ -32,6 +32,8 @@
     
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Math-1.png"]];
     self.navigationItem.title = @"Սեղանի բանաձեւ";
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor colorWithRed:139 green:69 blue:19 alpha:0]}];
     [self.hashvelButton setTitle:@"Հաշվել" forState:
      UIControlStateNormal];
     
@@ -98,7 +100,7 @@
 
 #pragma mark - TableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.numberOfN;
+    return self.numberOfN+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -165,16 +167,15 @@
 }
 
 #pragma mark -Counting Sexan
--(NSInteger)countSexan{
-    NSInteger h = (self.bValue.text.integerValue - self.aValue.text.integerValue) / self.numberOfN;
-    NSInteger sum = 0;
-    for (int i = 0; i <= self.numberOfN; ++i) {
+-(double)countSexan{
+    double h = (self.bValue.text.doubleValue - self.aValue.text.doubleValue) / self.numberOfN;
+    double sum = 0;
+    for (int i = 1; i <= self.numberOfN - 1; ++i) {
         NSString *yIKey = [NSString stringWithFormat: @"Y%ld",(long)i];
         NSInteger yI = [[self.dic valueForKey: yIKey] integerValue];
         sum += yI;
     }
-    
-    NSInteger sum2 = 0;
+    double sum2 = 0;
     NSString *y0Key = [NSString stringWithFormat: @"Y%ld",(long)0];
     NSInteger y0 = [[self.dic valueForKey: y0Key] integerValue];
     NSString *yNKey = [NSString stringWithFormat: @"Y%ld",(long)self.numberOfN];
@@ -185,12 +186,12 @@
 
 #pragma mark - UIAlertView
 -(IBAction)Alert{
-    NSInteger m = [self countSexan];
-    NSLog(@"%ld", (long)m);
-    NSString *inStr = [NSString stringWithFormat: @"%ld", (long)m];
+    double m = [self countSexan];
+    NSLog(@"%f", m);
+    NSString *inStr = [NSString stringWithFormat: @"%f", m];
     
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Sum"
+                                 alertControllerWithTitle:@"Սեղան բանաձեւի արդյունք՝"
                                  message:inStr
                                  preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* yesButton = [UIAlertAction
